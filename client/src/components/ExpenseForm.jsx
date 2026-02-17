@@ -13,6 +13,13 @@ export default function ExpenseForm(){
         date:""
     } );
 
+    const handleChange = (e) =>{
+        const {name, value} = e.target;
+
+        setFormData( (prevData) )
+
+    }
+
     //handleSubmit function of the form
     const handleSubmit = async (e) => {
         e.preventDefault();
@@ -50,6 +57,7 @@ export default function ExpenseForm(){
             type="text" 
             name="title"
             placeholder="Title"
+            onChange={handleChange}
             required
             />
 
@@ -57,6 +65,7 @@ export default function ExpenseForm(){
             type="number" 
             name="amount"
             placeholder="Amount"
+            onChange={handleChange}
             required
             />
 
@@ -64,6 +73,7 @@ export default function ExpenseForm(){
             type="text" 
             name="category"
             placeholder="Category"
+            onChange={handleChange}
             required
             />
 
@@ -71,6 +81,7 @@ export default function ExpenseForm(){
             type="text" 
             name="date"
             placeholder="Date"
+            onChange={handleChange}
             required
             />
 
