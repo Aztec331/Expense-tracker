@@ -1,8 +1,8 @@
-let name = "color";
+let name = "babar";
 let value = "red";
 
 let obj = {
-  [name]: value
+  [name]:value
 };
 
 console.log(obj);
