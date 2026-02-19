@@ -17,12 +17,11 @@ app.use(cors());
 connectDB();
 
 //routes
+
+//POST on http://localhost:5000/expenses
 app.use("/expenses", expenseRoutes);
 
 
-app.get("/", (req, res) => {
-  res.send("Expense Tracker API running");
-});
 
 
 
