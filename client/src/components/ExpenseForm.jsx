@@ -1,7 +1,6 @@
 import { useState } from "react";
 import { createExpense } from "../services/expenseService";
 
-
 export default function ExpenseForm(){
 
     //formData is just an object
@@ -14,6 +13,7 @@ export default function ExpenseForm(){
     } );
 
     const handleChange = (e) =>{
+
         const {name, value} = e.target;
 
         setFormData( (prevData)=> ({
@@ -21,12 +21,11 @@ export default function ExpenseForm(){
             [name]:value
         }) )
 
-
-
     }
 
     //handleSubmit function of the form
     const handleSubmit = async (e) => {
+
         e.preventDefault();
 
         try{
@@ -53,6 +52,7 @@ export default function ExpenseForm(){
     };
 
     return(
+
         <>
         <h2>Add Expense</h2>
 
@@ -101,4 +101,5 @@ export default function ExpenseForm(){
 
         </>
     )
+    
 }
