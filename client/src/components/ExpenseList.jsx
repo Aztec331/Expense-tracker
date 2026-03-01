@@ -20,7 +20,8 @@ export default function ExpenseList(){
 
     };
 
-
+    //We use sudeEffects to to call api
+    //fetchExpenses calls the getExpenses api
     useEffect(
 
         () => {
