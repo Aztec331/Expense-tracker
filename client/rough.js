@@ -1,8 +1,3 @@
-let name = "babar";
-let value = "red";
+let nums = [1,2,3,4,5];
 
-let obj = {
-  [name]:value
-};
-
-console.log(obj);
+nums.map(n => console.log(n*n));

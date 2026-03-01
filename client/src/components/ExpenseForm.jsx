@@ -54,7 +54,7 @@ export default function ExpenseForm(){
     return(
 
         <>
-        <h2>Add Expense</h2>
+        <h2>Add Expenses</h2>
 
         <form onSubmit={handleSubmit}>
 
@@ -94,7 +94,7 @@ export default function ExpenseForm(){
             required
             />
 
-            <button type="submit">Add Expense</button>
+            <button type="submit">Add new expense</button>
 
         </form>
 
