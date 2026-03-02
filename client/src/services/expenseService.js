@@ -13,7 +13,7 @@ const createExpense = async (expenseData) => {
 };
 
 //function with no parameters
-//Get api function to fetch all expenses
+//Get api function to fetch all expenses And return the data
 const getExpenses = async () => {
 
     const response = await axios.get(API_URL);

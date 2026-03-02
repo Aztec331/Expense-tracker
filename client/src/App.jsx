@@ -2,6 +2,9 @@ import { useState } from 'react'
 import './App.css'
 import ExpenseForm from './components/ExpenseForm'
 import ExpenseList from './components/ExpenseList'
+import Test from './Test'
+
+
 function App() {
 
 
@@ -14,6 +17,8 @@ function App() {
     <ExpenseForm />
     <hr/>
     <ExpenseList />
+
+    {/* <Test /> */}
 
 
       

@@ -1,3 +1,5 @@
-let nums = [1,2,3,4,5];
+function add (a, b){
+    return a + b;
+}
 
-nums.map(n => console.log(n*n));
+console.log( add(2, 3) );

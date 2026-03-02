@@ -25,6 +25,8 @@ export default function ExpenseList(){
     useEffect(
 
         () => {
+
+            console.log("useEffect called");
             fetchExpenses();
         },[]
 
