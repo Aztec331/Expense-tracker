@@ -1,5 +1,5 @@
-function add (a, b){
-    return a + b;
-}
+let arr1 = [1,2,3];
+let arr2 = arr1
 
-console.log( add(2, 3) );
+console.log(arr1 == arr2);   // true
+console.log(arr1 === arr2);  // true
