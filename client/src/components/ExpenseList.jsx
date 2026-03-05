@@ -33,7 +33,7 @@ export default function ExpenseList(){
             console.log("useEffect called");
             fetchExpenses();
             
-        },[expenses]
+        },[]
 
 
     );
@@ -43,6 +43,7 @@ export default function ExpenseList(){
 
         <>
 
+
             <h2>All Expenses</h2>
 
             {expenses.length === 0 ? 
@@ -50,6 +51,7 @@ export default function ExpenseList(){
             (
                 <p>No expenses found.</p>
             ):
+            
             //else statement
             (
 
@@ -73,11 +75,7 @@ export default function ExpenseList(){
             
             }
 
-
-
-
-
-
+            
         </>
 
 

@@ -1,11 +1,37 @@
-import { useState } from 'react'
+import { useState,useEffect } from 'react'
 import './App.css'
 import ExpenseForm from './components/ExpenseForm'
 import ExpenseList from './components/ExpenseList'
-import Test from './Test'
 
 
 function App() {
+
+  const [expenses, setExpenses] = useState([]);
+
+  const fetchExpenses = async () =>{
+
+    try{
+        const data = await getExpenses();
+        setExpenses(data);
+    }
+    catch(error){
+        console.error("Error fetching expenses:", error);
+    }
+
+    };
+
+
+  useEffect(
+
+    () => {
+
+        console.log("useEffect called");
+        fetchExpenses();
+            
+    },[]
+
+
+  );
 
 
   
@@ -17,9 +43,6 @@ function App() {
     <ExpenseForm />
     <hr/>
     <ExpenseList />
-
-    {/* <Test /> */}
-
 
       
     </>
