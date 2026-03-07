@@ -1,4 +1,5 @@
 //file to define models in our table    
+//model name is Expense but schema name is expenseSchema
 
 const mongoose = require("mongoose");
 
