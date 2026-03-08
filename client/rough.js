@@ -1,5 +1,19 @@
-let arr1 = [1,2,3];
-let arr2 = [1,2,3];
+const person = {
+    name: "Aditya",
+    age: 24,
+    city: "Pune"
+}
 
-console.log(arr1 == arr2);   // false
-console.log(arr1 === arr2);  // false   
+//without destructuring
+console.log(person.name); // Aditya
+console.log(person.age); // 24
+console.log(person.city); // Pune
+
+console.log("-------------");
+
+//with destructuring
+const { name, age, city } = person;
+
+console.log(name); // Aditya
+console.log(age); // 24
+console.log(city); // Pune

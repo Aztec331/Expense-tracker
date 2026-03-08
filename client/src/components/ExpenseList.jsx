@@ -1,44 +1,26 @@
-import { useEffect, useState } from "react";
-import { getExpenses } from "../services/expenseService";
+import { deleteExpense } from "../services/expenseService";
 
-export default function ExpenseList(){
+export default function ExpenseList( {
+    expenses,
+    fetchExpenses,
+    setEditingExpense} ){
 
-    const [expenses, setExpenses] = useState([]);
-
-    // #1 Entire component function runs which means run
-    // fetchExpenses function and register the useEffect 
-    // and then return the UI to be painted on the screen
-    //get expenses from backend 
-    //this is not the api call, this is just a function to call the api function
-    const fetchExpenses = async () =>{
-
+    const handleDelete = async (id) => {
         try{
-            const data = await getExpenses();
-            setExpenses(data);
+            await deleteExpense(id);
+            alert("Expense delted successfully !");
+            fetchExpenses(); //refresh list
         }
-        catch(error){
-            console.error("Error fetching expenses:", error);
+
+        catch (error) {
+            console.error("Delete failed:", error);
+            alert("Failed to delete expense");
         }
 
     };
 
-    
-    //#3 after UI is painted on screen, useEffect runs
-    //We use sudeEffects to to call api
-    //fetchExpenses calls the getExpenses api
-    useEffect(
-
-        () => {
-
-            console.log("useEffect called");
-            fetchExpenses();
-            
-        },[]
 
 
-    );
-
-    // #2 After componnet is rendred, UI is painted on the screen
     return(
 
         <>
@@ -64,6 +46,14 @@ export default function ExpenseList(){
                     <p>
                         {expense.title} - ${expense.amount} - {expense.category} - {new Date(expense.date).toLocaleDateString()}
                     </p>
+
+                    <button onClick={ () => setEditingExpense(expense) } >
+                        Edit
+                    </button>
+
+                    <button onClick={ () => handleDelete(expense._id) } >
+                        Delete madarchod
+                    </button>
 
                 </div>
 

@@ -1,7 +1,10 @@
 import { useState } from "react";
-import { createExpense } from "../services/expenseService";
+import { createExpense,updateExpense } from "../services/expenseService";
 
-export default function ExpenseForm(){
+export default function ExpenseForm( {
+    fetchExpenses,
+    editingExpense,
+    setEditingExpense} ){
 
     //formData is just an object
     //object is as same as json on postman
@@ -22,17 +25,21 @@ export default function ExpenseForm(){
         }) )
 
     }
-
+    
     //handleSubmit function of the form
+    //handles both create + update functionality
     const handleSubmit = async (e) => {
 
         e.preventDefault();
 
         try{
+
             const response = await createExpense(formData);
             console.log("Expense created", response);
 
             alert("Expense added successfully");
+
+            fetchExpenses(); // refresh the list of expenses 
 
             //Reset form
             setFormData({
@@ -40,13 +47,16 @@ export default function ExpenseForm(){
                 amount:"",
                 category:"",
                 date:""
-            });
-            
+            }); 
+
         }
 
+
         catch(error){
+
             console.error("Error creating expense:", error);
             alert("Failed to create expense");
+            
         }
         
     };
@@ -89,11 +99,11 @@ export default function ExpenseForm(){
             type="date" 
             name="date"
             placeholder="Date"
-             value={formData.date}
+            value={formData.date}
             onChange={handleChange}
             required
             />
-
+            
             <button type="submit">Add new expense</button>
 
         </form>

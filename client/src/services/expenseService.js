@@ -21,5 +21,19 @@ const getExpenses = async () => {
 
 };
 
+//function with id parameter
+//delete api function to delete an expense 
+const deleteExpense = async (id) => {
+    const response = await axios.delete(`${API_URL}/${id}`);
+    return response.data;
+};
 
-export {createExpense, getExpenses};
+//function with 2 parameters
+//put api function to update an expense
+const updateExpense = async (id, expenseData) => {
+  const response = await axios.put(`${API_URL}/${id}`, expenseData);
+  return response.data;
+};
+
+export { createExpense, getExpenses, deleteExpense, updateExpense };
+
