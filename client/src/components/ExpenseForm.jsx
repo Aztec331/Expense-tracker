@@ -34,10 +34,23 @@ export default function ExpenseForm( {
 
         try{
 
+        //if(editingExpense) means if editingExpense holds some value
+        //which just means if(editingExpense) holds and object in this case 
+        if(editingExpense){
+            await updateExpense(editingExpense._id, formData);
+            alert("Expense updated successfully !");
+            setEditingExpense(null); //reset editing state
+
+        }
+                
+        else{
             const response = await createExpense(formData);
             console.log("Expense created", response);
-
             alert("Expense added successfully");
+        }
+
+
+
 
             fetchExpenses(); // refresh the list of expenses 
 
@@ -104,7 +117,7 @@ export default function ExpenseForm( {
             required
             />
             
-            <button type="submit">Add new expense</button>
+            <button type="submit">Submit</button>
 
         </form>
 

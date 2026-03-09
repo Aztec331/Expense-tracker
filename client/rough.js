@@ -1,19 +1,18 @@
-const person = {
-    name: "Aditya",
-    age: 24,
-    city: "Pune"
+// const editingExpense = true
+
+
+// if(editingExpense) {
+//     console.log(true)
+// }
+// else {
+//     console.log(false)
+// }   
+
+let x = 0
+
+if(x) {
+    console.log(true)
 }
-
-//without destructuring
-console.log(person.name); // Aditya
-console.log(person.age); // 24
-console.log(person.city); // Pune
-
-console.log("-------------");
-
-//with destructuring
-const { name, age, city } = person;
-
-console.log(name); // Aditya
-console.log(age); // 24
-console.log(city); // Pune
+else {
+    console.log(false)
+}
