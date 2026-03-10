@@ -54,7 +54,6 @@ function App() {
     <ExpenseForm 
 
     fetchExpenses={fetchExpenses}
-
     //update the state of editingExpense
     editingExpense={editingExpense}
     setEditingExpense= {setEditingExpense}
@@ -69,7 +68,6 @@ function App() {
     
     expenses={expenses} 
     fetchExpenses={fetchExpenses}
-
     //update the state of editingExpense
     setEditingExpense= {setEditingExpense}
     

@@ -3,7 +3,7 @@ import { deleteExpense } from "../services/expenseService";
 export default function ExpenseList( {
     expenses,
     fetchExpenses,
-    setEditingExpense} ){
+    setEditingExpense}) {
 
     const handleDelete = async (id) => {
         try{

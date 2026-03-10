@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { createExpense,updateExpense } from "../services/expenseService";
 
 export default function ExpenseForm( {
@@ -14,6 +14,24 @@ export default function ExpenseForm( {
         category:"",
         date:""
     } );
+
+    useEffect(
+
+        () => {
+
+        if(editingExpense){
+            setFormData({
+                title:editingExpense.title,
+                amount:editingExpense.amount,
+                category:editingExpense.category,
+                date:editingExpense.date.split("T")[0] //to get only date part
+            });
+        }
+
+    }, [editingExpense]
+
+    )
+
 
     const handleChange = (e) =>{
 
@@ -117,7 +135,9 @@ export default function ExpenseForm( {
             required
             />
             
-            <button type="submit">Submit</button>
+            <button type="submit">
+            {editingExpense ? "Update Expense" : "Add Expense"}
+            </button>
 
         </form>
 
